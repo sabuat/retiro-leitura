@@ -6,10 +6,29 @@ const poiret = Poiret_One({ weight: '400', subsets: ['latin'] });
 const inter = Inter({ subsets: ['latin'] });
 
 export default function PremiumLandingPage() {
-  const symplaLink = "https://www.sympla.com.br/seu-evento-aqui";
-  const whatsappLink = "https://chat.whatsapp.com/seu-link-aqui";
+  const whatsappLink = "https://chat.whatsapp.com/HhezTjiTNenL14YwoOpk0J";
 
   const [selectedBook, setSelectedBook] = useState<null | any>(null);
+
+  // Función de checkout para Mercado Pago
+  const handleCheckout = async () => {
+    try {
+      const response = await fetch('/api/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ item: 'ingresso' })
+      });
+      
+      const data = await response.json();
+      
+      // Redirige al ambiente seguro de Mercado Pago
+      if (data.init_point) {
+        window.location.href = data.init_point;
+      }
+    } catch (error) {
+      console.error("Error en checkout", error);
+    }
+  };
 
   const books = [
     { 
@@ -124,14 +143,12 @@ export default function PremiumLandingPage() {
             Na urgência da cidade, o verdadeiro luxo é o tempo. Um refúgio urbano desenhado exclusivamente para leitoras.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <a 
-              href={symplaLink}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button 
+              onClick={handleCheckout}
               className="bg-[#c8aa77] text-white px-8 py-4 rounded-sm text-sm uppercase tracking-widest font-medium hover:bg-[#b0925f] transition-all"
             >
-              Garantir minha vaga
-            </a>
+              Garantir minha vaga (Pix / Cartão)
+            </button>
             <a 
               href={whatsappLink}
               target="_blank"
@@ -258,14 +275,12 @@ export default function PremiumLandingPage() {
       <section className="py-32 px-6 bg-[#F7F5F0] text-center">
         <h2 className={`text-5xl text-stone-900 mb-6 ${poiret.className}`}>Pronta para a imersão?</h2>
         <p className="mb-12 text-stone-500 text-lg font-light tracking-wide">As portas do nosso Oásis fecham ao atingirmos 16 vagas.</p>
-        <a 
-          href={symplaLink}
-          target="_blank"
-          rel="noopener noreferrer"
+        <button 
+          onClick={handleCheckout}
           className="inline-block bg-stone-900 text-stone-50 px-12 py-5 rounded-sm uppercase tracking-widest font-medium text-sm hover:bg-stone-800 transition-all shadow-xl hover:shadow-2xl"
         >
-          Comprar Passaporte (Sympla)
-        </a>
+          Comprar Passaporte (Pix / Cartão)
+        </button>
       </section>
 
     </div>
