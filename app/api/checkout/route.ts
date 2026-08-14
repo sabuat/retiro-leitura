@@ -8,6 +8,12 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
 
+    // 1. Extraemos el precio que mandó tu página web ("R$ 800,00" o "R$ 1.000,00")
+    const precioRecibido = body.preco; 
+    
+    // 2. Lo transformamos a un número limpio para que Mercado Pago lo procese
+    const precioFinal = precioRecibido === "R$ 800,00" ? 800.00 : 1000.00;
+
     // Creamos la preferencia de pago
     const preference = new Preference(client);
     
@@ -20,7 +26,7 @@ export async function POST(request: Request) {
             description: 'Retiro de leitura all-inclusive (16 a 18 de outubro)',
             quantity: 1,
             currency_id: 'BRL',
-            unit_price: 1000.00,
+            unit_price: precioFinal, // AQUÍ CONECTAMOS EL PRECIO DINÁMICO
           }
         ],
         back_urls: {
@@ -29,7 +35,6 @@ export async function POST(request: Request) {
           pending: 'https://tusitio.com/pendente'
         },
         auto_return: 'approved',
-        // Aquí es donde la magia ocurre para la automatización post-venta
         notification_url: 'https://tu-webhook-url.com/webhook/mercadopago', 
       }
     });

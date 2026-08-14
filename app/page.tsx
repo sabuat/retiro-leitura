@@ -10,8 +10,12 @@ export default function PremiumLandingPage() {
 
   const [selectedBook, setSelectedBook] = useState<null | any>(null);
   const [isCheckoutModalOpen, setIsCheckoutModalOpen] = useState(false);
+  
+  // Estado para el Checkout
   const [formData, setFormData] = useState({ nome: '', telefone: '', email: '', canal: '' });
-  const [waitlistData, setWaitlistData] = useState({ email: '', dataFutura: '' });
+  
+  // Estado para la Lista de Espera (AQUÍ ESTÁN LOS 4 DATOS CORREGIDOS)
+  const [waitlistData, setWaitlistData] = useState({ nome: '', telefone: '', email: '', dataFutura: '' });
 
   // SIMULACIÓN: Cambia este número para probar los estados
   const vagasVendidas = 0; 
@@ -47,17 +51,19 @@ export default function PremiumLandingPage() {
     }
   };
 
-  // Manejador de la Lista de Espera
+  // Manejador de la Lista de Espera (CORREGIDO PARA MANDAR LOS 4 DATOS)
   const handleWaitlistSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       await fetch('/api/webhook', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
+        // Esto envía: type, nome, telefone, email, dataFutura
         body: JSON.stringify({ type: 'lista_espera', ...waitlistData })
       });
       alert("Interesse registrado com sucesso! Entraremos em contato.");
-      setWaitlistData({ email: '', dataFutura: '' });
+      // Limpia el formulario después de enviar
+      setWaitlistData({ nome: '', telefone: '', email: '', dataFutura: '' });
     } catch (error) {
       console.error("Error salvando lista de espera", error);
     }
@@ -66,17 +72,17 @@ export default function PremiumLandingPage() {
   const books = [
     { 
       title: "Você me espera para morrer", 
-      author: "Curadoria Oásis", 
-      cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4EXMS42yQPY9rKIK6xypLQKrFE49y76c8abCAvR0J7A&s=10",
+      author: "Maria Fernanada Maglio", 
+      cover: "https://m.media-amazon.com/images/I/A1EMMEPSL9L._UF1000,1000_QL80_.jpg",
       reason: "Uma narrativa envolvente que nos confronta com os limites da mortalidade e o peso das escolhas não feitas. Essencial para o nosso debate.",
-      buyLink: "#"
+      buyLink: "https://www.amazon.com.br/Você-me-espera-para-morrer-ebook/dp/B0DF9G9LNP"
     },
     { 
       title: "Açúcar queimado", 
       author: "Avni Doshi", 
-      cover: "https://m.media-amazon.com/images/I/814BCD1qfFL.jpg",
+      cover: "https://m.media-amazon.com/images/I/91VhageLVlL.jpg",
       reason: "Uma exploração afiada e desconfortável sobre os laços entre mãe e filha. Um retrato visceral sobre memória, ressentimento e amor.",
-      buyLink: "#"
+      buyLink: "https://www.amazon.com.br/Açúcar-queimado-Avni-Doshi/dp/6555530286"
     },
     { 
       title: "Pitangas Verdes", 
@@ -94,10 +100,10 @@ export default function PremiumLandingPage() {
     },
     { 
       title: "Voltar a Quando", 
-      author: "Curadoria Oásis", 
-      cover: "https://m.media-amazon.com/images/I/81eYTG+0x0L._AC_UF1000,1000_QL80_.jpg",
+      author: "María Elena Morán ", 
+      cover: "https://m.media-amazon.com/images/I/715N4F4mpYL._AC_UF1000,1000_QL80_.jpg",
       reason: "Uma reflexão literária poderosa sobre o tempo, os retornos impossíveis e a reconstrução de si mesmo através da memória.",
-      buyLink: "#"
+      buyLink: "https://www.amazon.com.br/Voltar-quando-María-Elena-Morán/dp/6558302373"
     },
     { 
       title: "A sagração da matéria", 
@@ -350,7 +356,33 @@ export default function PremiumLandingPage() {
             <h2 className={`text-4xl text-stone-900 mb-4 ${poiret.className}`}>Vagas Esgotadas!</h2>
             <p className="text-stone-600 mb-8 font-light">Nosso retiro alcançou o limite de 20 leitoras. Preencha o formulário abaixo para registrar seu interesse nos próximos eventos e votar na melhor data.</p>
             
+            {/* FORMULARIO DE LISTA DE ESPERA CORREGIDO */}
             <form className="space-y-6 text-left" onSubmit={handleWaitlistSubmit}>
+              
+              <div>
+                <label className="block text-xs uppercase tracking-widest text-stone-500 mb-1">Nome Completo</label>
+                <input 
+                  required 
+                  type="text" 
+                  className="w-full p-3 border border-stone-300 rounded-sm bg-stone-50" 
+                  placeholder="Seu nome" 
+                  value={waitlistData.nome}
+                  onChange={e => setWaitlistData({...waitlistData, nome: e.target.value})}
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs uppercase tracking-widest text-stone-500 mb-1">Telefone (WhatsApp)</label>
+                <input 
+                  required 
+                  type="tel" 
+                  className="w-full p-3 border border-stone-300 rounded-sm bg-stone-50" 
+                  placeholder="(11) 99999-9999" 
+                  value={waitlistData.telefone}
+                  onChange={e => setWaitlistData({...waitlistData, telefone: e.target.value})}
+                />
+              </div>
+
               <div>
                 <label className="block text-xs uppercase tracking-widest text-stone-500 mb-1">Seu E-mail</label>
                 <input 
@@ -362,6 +394,7 @@ export default function PremiumLandingPage() {
                   onChange={e => setWaitlistData({...waitlistData, email: e.target.value})}
                 />
               </div>
+              
               <div>
                 <label className="block text-xs uppercase tracking-widest text-stone-500 mb-3">Qual data funciona melhor para você?</label>
                 <div className="space-y-2">
@@ -375,6 +408,7 @@ export default function PremiumLandingPage() {
                   </label>
                 </div>
               </div>
+              
               <button type="submit" className="w-full bg-stone-900 text-stone-50 px-6 py-4 rounded-sm uppercase tracking-widest text-sm font-medium hover:bg-stone-800 transition-all">
                 Registrar Interesse
               </button>
