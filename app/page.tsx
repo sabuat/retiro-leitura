@@ -213,7 +213,7 @@ export default function PremiumLandingPage() {
             Oásis Literário SP
           </h1>
           <p className="text-xl md:text-2xl text-stone-200 font-light mb-12 max-w-2xl mx-auto">
-            Um refúgio para finalmente por a sua leitura ao dia. Uma experiência íntima com direito a noites de conversa, vinho, boa comida e mimos durante a sua estadia.
+            Um refúgio para finalmente por a sua leitura em dia. Uma experiência íntima com direito a noites de conversa, vinho, boa comida e mimos durante a sua estadia.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             {!esgotado ? (
