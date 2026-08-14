@@ -213,7 +213,7 @@ export default function PremiumLandingPage() {
             Oásis Literário SP
           </h1>
           <p className="text-xl md:text-2xl text-stone-200 font-light mb-12 max-w-2xl mx-auto">
-            Na urgência da cidade, o verdadeiro luxo é o tempo. Um refúgio urbano desenhado exclusivamente para leitoras.
+            Um refúgio para finalmente por a sua leitura ao dia. Uma experiência íntima com direito a noites de conversa, vinho, boa comida e mimos durante a sua estadia.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             {!esgotado ? (
@@ -293,7 +293,7 @@ export default function PremiumLandingPage() {
           <div className="max-w-2xl mx-auto bg-[#F7F5F0] p-6 rounded-sm shadow-sm border border-stone-200 mb-10">
             <p className="text-stone-700 font-medium mb-3 uppercase tracking-widest text-sm">O que te espera:</p>
             <p className="text-stone-600 font-light leading-relaxed italic">
-              Uma ecobag de edição limitada do retiro, um livro sorpresa, fichas de leituras, marcadores de página exclusivos... e muito mais surpresas.
+              Uma ecobag de edição limitada do retiro, um livro surpresa, fichas de leituras, marcadores de página exclusivos... e muito mais surpresas.
             </p>
           </div>
           <button 
