@@ -338,7 +338,7 @@ export default function PremiumLandingPage() {
         </div>
         <h3 className="text-2xl font-medium mb-4 text-stone-800 tracking-wide">Gabriele Motta</h3>
         <div className="text-lg text-stone-600 leading-relaxed font-light mb-8 max-w-3xl mx-auto">
-          <p>Formada em <b>Artes Cênicas pela UNICAMP</b>, e atua como <i>atriz, dubladora, produtora cultural, educadora e curadora</i>. <b>Co-fundou a Suculenta Cia.</b>, onde realizou a pesquisa em fotoperformance intitulada <i>“Série: Eu daria um bom vaso?”</i>.</p>
+          <p>Formada em <b>Artes Cênicas pela UNICAMP</b>, atua como <i>atriz, dubladora, produtora cultural, educadora e curadora</i>. <b>Co-fundou a Suculenta Cia.</b>, onde realizou a pesquisa em fotoperformance intitulada <i>“Série: Eu daria um bom vaso?”</i>.</p>
           <br></br>
           <p>Com a companhia, já em 2022, foi <b>contemplada pelo edital do Proac Artistas Iniciantes</b>, para o desenvolvimento de um curta-metragem livremente inspirado na obra "Cartas a uma senhorita em Paris" de Cortázar, intitulado <i>"Como vomitar um coelhinho"</i>. É também <b>autora do livro "Tutano da Palavra", publicado pela Editora Pitanga</b>, 2026.</p>
         </div>
