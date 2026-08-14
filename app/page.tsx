@@ -269,7 +269,7 @@ export default function PremiumLandingPage() {
               <span className={`text-2xl text-[#c8aa77] mr-6 mt-1 ${poiret.className}`}>02.</span>
               <div>
                 <h3 className="text-xl font-medium text-stone-800 mb-2 tracking-wide uppercase text-sm">Gastronomia & Wine Nights</h3>
-                <p className="text-stone-600 font-light leading-relaxed">Pausas acolhedoras com comfort food, noites de massas artesanais e degustação de vinhos para embalar os debates literários noturnos.</p>
+                <p className="text-stone-600 font-light leading-relaxed">Pausas acolhedoras com comfort food, noites de massas artesanais e vinhos para embalar os debates literários noturnos.</p>
               </div>
             </li>
             <li className="flex items-start">
@@ -283,18 +283,24 @@ export default function PremiumLandingPage() {
         </div>
       </section>
 
-      {/* Welcome Kit */}
+    {/* Welcome Kit */}
       <section className="py-20 px-6 bg-[#eae7de]">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className={`text-4xl text-stone-800 mb-6 ${poiret.className}`}>O Welcome Kit</h2>
-          <p className="text-lg text-stone-600 font-light leading-relaxed mb-10">
-            Acreditamos que a estética faz parte do ritual de leitura. Ao cruzar a porta do nosso retiro, cada leitora será recebida com um kit pensado para acompanhar sua jornada no fim de semana e além.
+          <p className="text-lg text-stone-600 font-light leading-relaxed mb-8">
+            Acreditamos que a estética faz parte do ritual de leitura. Ao cruzar a porta do Oásis, você será recebida com um kit exclusivo, pensado para acompanhar sua jornada durante o fim de semana e muito além dele.
           </p>
+          <div className="max-w-2xl mx-auto bg-[#F7F5F0] p-6 rounded-sm shadow-sm border border-stone-200 mb-10">
+            <p className="text-stone-700 font-medium mb-3 uppercase tracking-widest text-sm">O que te espera:</p>
+            <p className="text-stone-600 font-light leading-relaxed italic">
+              Uma ecobag de edição limitada do retiro, um livro sorpresa, fichas de leituras, marcadores de página exclusivos... e muito mais surpresas.
+            </p>
+          </div>
           <button 
-            onClick={() => alert("Informações detalhadas sobre o kit serão enviadas em breve!")} 
+            onClick={() => setIsCheckoutModalOpen(true)} 
             className="inline-block border-2 border-stone-800 text-stone-800 px-8 py-3 rounded-sm uppercase tracking-widest text-sm font-medium hover:bg-stone-800 hover:text-[#eae7de] transition-all"
           >
-            Quero saber mais
+            Garantir minha vaga e meu kit
           </button>
         </div>
       </section>
