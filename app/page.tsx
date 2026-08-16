@@ -92,6 +92,13 @@ export default function PremiumLandingPage() {
       buyLink: "#"
     },
     { 
+      title: "Voltar a Quando", 
+      author: "María Elena Morán ", 
+      cover: "https://m.media-amazon.com/images/I/715N4F4mpYL._AC_UF1000,1000_QL80_.jpg",
+      reason: "Uma reflexão literária poderosa sobre o tempo, os retornos impossíveis e a reconstrução de si mesmo através da memória.",
+      buyLink: "https://www.amazon.com.br/Voltar-quando-María-Elena-Morán/dp/6558302373"
+    },
+        { 
       title: "A cidade das gaivotas", 
       author: "Sabuat Urbina Ribeiro", 
       cover: "/images/gaivotas.png",
@@ -99,18 +106,11 @@ export default function PremiumLandingPage() {
       buyLink: "https://www.editoraminimalismos.com/product-page/a-cidade-das-gaivotas-de-sabuat-urbina-ribeiro"
     },
     { 
-      title: "Voltar a Quando", 
-      author: "María Elena Morán ", 
-      cover: "https://m.media-amazon.com/images/I/715N4F4mpYL._AC_UF1000,1000_QL80_.jpg",
-      reason: "Uma reflexão literária poderosa sobre o tempo, os retornos impossíveis e a reconstrução de si mesmo através da memória.",
-      buyLink: "https://www.amazon.com.br/Voltar-quando-María-Elena-Morán/dp/6558302373"
-    },
-    { 
-      title: "A sagração da matéria", 
-      author: "Sihan Felix", 
-      cover: "/images/materia.png",
-      reason: "Um ensaio narrativo que nos obriga a parar e repensar nossa conexão com o tangível, a rotina e a espiritualidade escondida no cotidiano.",
-      buyLink: "https://www.editoraminimalismos.com/product-page/a-sagra%C3%A7%C3%A3o-da-mat%C3%A9ria-de-sihan-felix"
+      title: "Mudar: Método", 
+      author: "Édouard Louis", 
+      cover: "https://m.media-amazon.com/images/I/81NlpK3DZSL.jpg",
+      reason: "Uma narrativa em que a homofobia, as diferenças de classe e as relações familiares aparecem com uma força a um só tempo dolorosa e bela.",
+      buyLink: "https://www.amazon.com.br/Mudar-Método-Édouard-Louis/dp/6556925659"
     },
     { 
       title: "A palavra que resta", 
@@ -213,7 +213,7 @@ export default function PremiumLandingPage() {
             Oásis Literário SP
           </h1>
           <p className="text-xl md:text-2xl text-stone-200 font-light mb-12 max-w-2xl mx-auto">
-            Um refúgio para finalmente por a sua leitura em dia. Uma experiência íntima com direito a noites de conversa, vinho, boa comida e mimos durante a sua estadia.
+            Um refúgio para finalmente colocar a sua leitura em dia. Uma experiência íntima com direito a noites de conversa, vinho, boa comida e mimos durante a sua estadia.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             {!esgotado ? (
@@ -293,7 +293,7 @@ export default function PremiumLandingPage() {
           <div className="max-w-2xl mx-auto bg-[#F7F5F0] p-6 rounded-sm shadow-sm border border-stone-200 mb-10">
             <p className="text-stone-700 font-medium mb-3 uppercase tracking-widest text-sm">O que te espera:</p>
             <p className="text-stone-600 font-light leading-relaxed italic">
-              Uma ecobag de edição limitada do retiro, um livro surpresa, fichas de leituras, marcadores de página exclusivos... e muito mais surpresas.
+              Uma ecobag de edição limitada do retiro, um livro incógnito, fichas de leituras, marcadores de página exclusivos... e outras surpresas.
             </p>
           </div>
           <button 
@@ -302,6 +302,45 @@ export default function PremiumLandingPage() {
           >
             Garantir minha vaga e meu kit
           </button>
+        </div>
+      </section>
+
+      {/* A Leitura Recomendada */}
+      <section className="py-24 px-6 bg-[#F7F5F0]">
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16 bg-white p-8 md:p-14 rounded-sm shadow-sm border border-stone-100">
+          
+          <div className="w-48 md:w-64 flex-shrink-0 shadow-xl relative">
+            <img 
+              src="https://m.media-amazon.com/images/I/814BCD1qfFL.jpg" 
+              alt="Capa do livro Lá é o tempo" 
+              className="w-full h-full object-cover rounded-sm" 
+            />
+          </div>
+          
+          <div className="text-left">
+            <p className="text-sm uppercase tracking-widest text-[#c8aa77] font-medium mb-3">Leitura Âncora do Retiro</p>
+            <h2 className={`text-4xl text-stone-800 mb-2 ${poiret.className}`}>Lá é o tempo</h2>
+            <p className="text-sm uppercase tracking-widest text-stone-500 mb-6">Maria Fernanda Maglio</p>
+            
+            <div className="text-stone-600 font-light leading-relaxed space-y-4 mb-8">
+              <p>
+                Embora o Oásis Literário seja um espaço livre onde cada leitora pode mergulhar no livro que escolher, sempre selecionamos uma <strong>leitura sugerida</strong> para servir como coração do evento.
+              </p>
+              <p>
+                Para esta edição, escolhemos a poética e arrebatadora obra de Maria Fernanda Maglio. Caso você não tenha uma leitura específica em mente, este livro será o nosso ponto de encontro. Ele servirá como bússola para os nossos debates noturnos e um excelente ponto de partida para muitas conversas.
+              </p>
+            </div>
+            
+            <a 
+              href="https://www.amazon.com.br/s?k=L%C3%A1+%C3%A9+o+tempo+Maria+Fernanda+Maglio" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="inline-block border border-stone-800 text-stone-800 px-8 py-3 rounded-sm uppercase tracking-widest text-xs font-medium hover:bg-stone-800 hover:text-white transition-all"
+            >
+              Conhecer a obra
+            </a>
+          </div>
+          
         </div>
       </section>
 
@@ -422,6 +461,29 @@ export default function PremiumLandingPage() {
           </div>
         )}
       </section>
+
+      {/* Footer / Rodapé */}
+      <footer className="bg-stone-900 text-stone-400 py-8 px-6 border-t border-stone-800">
+        <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
+          <h2 className={`text-2xl text-stone-200 mb-2 tracking-wide ${poiret.className}`}>
+            Oásis Literário SP
+          </h2>
+          <p className="text-sm font-light mb-4 max-w-md leading-relaxed text-stone-500">
+            O verdadeiro luxo é o tempo.
+          </p>
+          
+          <div className="w-12 h-[1px] bg-stone-700 mb-4"></div>
+          
+          <div className="flex flex-col gap-1">
+            <p className="text-xs uppercase tracking-widest text-[#c8aa77] font-medium">
+              Desenvolvido por Urbina Serviços LTDA
+            </p>
+            <p className="text-[10px] uppercase tracking-widest text-stone-600">
+              &copy; 2026 Oásis Literário. Todos os direitos reservados.
+            </p>
+          </div>
+        </div>
+      </footer>
 
     </div>
   );
