@@ -311,6 +311,45 @@ export default function PremiumLandingPage() {
           
           <div className="w-48 md:w-64 flex-shrink-0 shadow-xl relative">
             <img 
+              src="https://m.media-amazon.com/images/I/715N4F4mpYL._AC_UF1000,1000_QL80_.jpg" 
+              alt="Capa do livro Voltar a Quando" 
+              className="w-full h-full object-cover rounded-sm" 
+            />
+          </div>
+          
+          <div className="text-left">
+            <p className="text-sm uppercase tracking-widest text-[#c8aa77] font-medium mb-3">Leitura Âncora do Retiro</p>
+            <h2 className={`text-4xl text-stone-800 mb-2 ${poiret.className}`}>Voltar a Quando</h2>
+            <p className="text-sm uppercase tracking-widest text-stone-500 mb-6">María Elena Morán</p>
+            
+            <div className="text-stone-600 font-light leading-relaxed space-y-4 mb-8">
+              <p>
+                Embora o Oásis Literário seja um espaço livre onde cada leitora pode mergulhar no livro que escolher, sempre selecionamos uma <strong>leitura sugerida</strong> para servir como coração do evento.
+              </p>
+              <p>
+                Para esta edição, escolhemos obra de María Elena Morán, uma reflexão literária poderosa sobre o tempo, os retornos impossíveis e a reconstrução de si mesmo através da memória. Caso você não tenha uma leitura específica em mente, este livro será o nosso ponto de encontro. Ele servirá como bússola para os nossos debates noturnos e um excelente ponto de partida para muitas conversas.
+              </p>
+            </div>
+            
+            <a 
+              href="https://www.amazon.com.br/Voltar-quando-María-Elena-Morán/dp/6558302373" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="inline-block border border-stone-800 text-stone-800 px-8 py-3 rounded-sm uppercase tracking-widest text-xs font-medium hover:bg-stone-800 hover:text-white transition-all"
+            >
+              Conhecer a obra
+            </a>
+          </div>
+          
+        </div>
+      </section>
+
+            {/* A Leitura Recomendada */}
+      {/* <section className="py-24 px-6 bg-[#F7F5F0]">
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16 bg-white p-8 md:p-14 rounded-sm shadow-sm border border-stone-100">
+          
+          <div className="w-48 md:w-64 flex-shrink-0 shadow-xl relative">
+            <img 
               src="https://m.media-amazon.com/images/I/814BCD1qfFL.jpg" 
               alt="Capa do livro Lá é o tempo" 
               className="w-full h-full object-cover rounded-sm" 
@@ -342,7 +381,7 @@ export default function PremiumLandingPage() {
           </div>
           
         </div>
-      </section>
+      </section> */}
 
       {/* Pílulas Literárias */}
       <section className="py-24 px-6 bg-[#2a3426] text-stone-100">
